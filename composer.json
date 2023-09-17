@@ -1,0 +1,34 @@
+{
+    "name": "yallow-com/whatsapp-api",
+    "description": "Wrapper for whatsapp meta API",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "YallowCom\\WhatsAppAPI\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "YallowCom\\WhatsAppAPI\\WhatsAppAPIServiceProvider"
+            ],
+            "aliases": {
+                "WhatsappAPI": "YallowCom\\WhatsAppAPI\\Facades\\WhatsAppAPIFacade"
+            }
+        }
+    },
+    "authors": [
+        {
+            "name": "Mohamed Eliwah",
+            "email": "mohamed.eliwah@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^6.3 || ^7.0",
+        "phpunit/phpunit": ">=7.0 < 10"
+    }
+}
