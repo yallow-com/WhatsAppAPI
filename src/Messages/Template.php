@@ -23,20 +23,19 @@ class Template
                 'name' => $name,
                 'language' => [
                     'code' => $language ?? 'en_US'
-                ],
-                'components' => []
+                ]
             ]
         ]; 
 
         if(!empty($header_parameters)){
-            $payload['components'][] = [
+            $payload['template']['components'][] = [
                 'type' => 'header',
                 'parameters' => $header_parameters
             ];
         }
 
         if(!empty($body_parameters)){
-            $payload['components'][] = [
+            $payload['template']['components'][] = [
                 'type' => 'body',
                 'parameters' => $body_parameters
             ];
@@ -44,7 +43,7 @@ class Template
 
         if(!empty($buttons_parameters)){
             foreach ($buttons_parameters as $key => $button) {
-                $payload['components'][] = [
+                $payload['template']['components'][] = [
                     'type' => 'button',
                     'sub_type' => "quick_reply",
                     'index' => $key,
