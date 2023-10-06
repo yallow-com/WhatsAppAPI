@@ -15,14 +15,14 @@ class Template
      * @param  mixed $language
      * @return array
      */
-    public static function payload(string $name, array $header_parameters = [],  array $body_parameters = [],  array $buttons_parameters = [], string $language = 'en_US'): array
+    public static function payload(string $name, array $header_parameters = [],  array $body_parameters = [],  array $buttons_parameters = [], string $language = 'en'): array
     {
         $payload = [
             'type' => 'template',
             'template' => [
                 'name' => $name,
                 'language' => [
-                    'code' => $language ?? 'en_US'
+                    'code' => $language
                 ]
             ]
         ]; 
