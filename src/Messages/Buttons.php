@@ -40,6 +40,11 @@ class Buttons
 
         if(!empty($buttons_parameters)){
             foreach ($buttons_parameters as $key => $button) {
+                if(isset($button['type']) && $button['type'] == 'url'){
+                    $payload['interactive']['action']['buttons'][] = $button;
+                    continue;
+                }
+
                 $payload['interactive']['action']['buttons'][] = [
                     'type' => 'reply',
                     'reply' => $button
