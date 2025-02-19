@@ -61,10 +61,10 @@ class Template
                     'type' => 'button',
                     'sub_type' => "url",
                     'index' => $key,
-                    'parameters' => [
+                    'parameters' => [[
                         'type' => 'text',
                         'text' => $param
-                    ]
+                    ]]
                 ];   
             }
         }
