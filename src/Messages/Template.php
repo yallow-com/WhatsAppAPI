@@ -56,14 +56,14 @@ class Template
         }
 
         if(!empty($url_parameters)){
-            foreach ($buttons_parameters as $key => $button) {
+            foreach ($url_parameters as $key => $param) {
                 $payload['template']['components'][] = [
                     'type' => 'button',
                     'sub_type' => "url",
                     'index' => $key,
                     'parameters' => [
                         'type' => 'text',
-                        'payload' => $button
+                        'text' => $param
                     ]
                 ];   
             }
