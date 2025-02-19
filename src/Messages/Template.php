@@ -15,7 +15,7 @@ class Template
      * @param  mixed $language
      * @return array
      */
-    public static function payload(string $name, array $header_parameters = [],  array $body_parameters = [],  array $buttons_parameters = [], string $language = 'en'): array
+    public static function payload(string $name, array $header_parameters = [],  array $body_parameters = [],  array $buttons_parameters = [],  array $url_parameters = [], string $language = 'en'): array
     {
         $payload = [
             'type' => 'template',
@@ -49,6 +49,20 @@ class Template
                     'index' => $key,
                     'parameters' => [
                         'type' => 'payload',
+                        'payload' => $button
+                    ]
+                ];   
+            }
+        }
+
+        if(!empty($url_parameters)){
+            foreach ($buttons_parameters as $key => $button) {
+                $payload['template']['components'][] = [
+                    'type' => 'button',
+                    'sub_type' => "url",
+                    'index' => $key,
+                    'parameters' => [
+                        'type' => 'text',
                         'payload' => $button
                     ]
                 ];   
